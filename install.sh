@@ -16,7 +16,7 @@ echo $DIR
 
 installDir=${DIR:-remote-toolkit}'/remote-toolkit'
 echo "== INSTALL DIR"
-#echo $installDir+
+echo $installDir
 
 
 

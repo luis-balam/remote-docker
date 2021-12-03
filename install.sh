@@ -38,7 +38,7 @@ cd $installDir
 #echo "== Runnining compose."
 #docker compose run --rm toolkit
 docker build -t $DOCKER_IMAGE .
-#docker run -it --rm -v $installDir/resources:/usr/bin/remote-toolkit $DOCKER_IMAGE bash
+docker run -it --rm -v "$installDir/resources:/usr/bin/remote-toolkit/resources" $DOCKER_IMAGE bash
 
 
 

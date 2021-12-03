@@ -5,7 +5,9 @@ version: '3.8'
 
 services:
   toolkit:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     volumes:
       - "./resources:/usr/bin/remote-toolkit/resources"
     working_dir: "/usr/bin/remote-toolkit"

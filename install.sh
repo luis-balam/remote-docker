@@ -29,15 +29,15 @@ mkdir "$installDir/resources"
 
 
 DOCKER_IMAGE="torus/remote-toolkit:local"
-echo "== Docker image."
-echo $DOCKER_IMAGE
+#echo "== Docker image."
+#echo $DOCKER_IMAGE
 
 #echo "== Working directory"
-#cd $installDir
+cd $installDir
 
-echo "== Runnining compose."
+#echo "== Runnining compose."
 #docker compose run --rm toolkit
-docker build -t $DOCKER_IMAGE -f "$installDir/toolkit-compose.yml"  .
+docker build -t $DOCKER_IMAGE .
 #docker run -it --rm -v $installDir/resources:/usr/bin/remote-toolkit $DOCKER_IMAGE bash
 
 

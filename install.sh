@@ -14,9 +14,9 @@ DIR=`printf "%q\n" "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"`
 
 echo $DIR
 
-installDir=${DIR:-remote-toolkit}
+installDir=${DIR:-remote-toolkit}+'/remote-toolkit'
 echo "== INSTALL DIR"
-echo $installDir
+#echo $installDir+
 
 
 
@@ -30,7 +30,7 @@ mkdir "$installDir/resources"
 
 DOCKER_IMAGE="torus/remote-toolkit:local"
 echo "== Runnining compose."
-docker compose up
+docker compose run --rm toolkit
 
 
 

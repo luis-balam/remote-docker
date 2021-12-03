@@ -5,7 +5,7 @@ services:
     build: .
     image: torus/remote-toolkit:local
     volumes:
-      - "/resources:/usr/bin/remote-toolkit/resources"
+      - "./resources:/usr/bin/remote-toolkit/resources"
     working_dir: "/usr/bin/remote-toolkit"
     environment:
       - PATH=/usr/bin/remote-toolkit/bin

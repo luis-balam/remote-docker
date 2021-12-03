@@ -14,7 +14,7 @@ DIR=`printf "%q\n" "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"`
 
 echo $DIR
 
-installDir=${DIR:-remote-toolkit}+'/remote-toolkit'
+installDir=${DIR:-remote-toolkit}'/remote-toolkit'
 echo "== INSTALL DIR"
 #echo $installDir+
 

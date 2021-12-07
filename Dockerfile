@@ -14,6 +14,9 @@ RUN \
 
 ADD . /usr/bin/inkling-rsync
 
+#CMD /usr/bin/inkling-rsync/bootstrap.sh
+RUN chmod 777 /usr/bin/inkling-rsync/bootstrap.sh
+
 CMD /usr/bin/inkling-rsync/bootstrap.sh
 
 

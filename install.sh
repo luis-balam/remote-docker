@@ -30,11 +30,11 @@ if [[ $? == 0 ]]; then
   #docker exec -it inkling-rsync-toolkit-1 bash
   echo "Docker compose"
   docker compose -f "$installDir/toolkit-compose.yml" up -d
-    #if [[ $? == 0 ]]; then
-    #  docker exec -it inkling-rsync-toolkit-1 bash
-    #else
-    #  echo "Error building and executing container."
-    #fi
+    if [[ $? == 0 ]]; then
+      docker exec -it inkling-rsync-toolkit-1 bash
+    else
+      echo "Error building and executing container."
+    fi
 else
   echo "Error cloning git repo locally, unable to continue."
 fi

@@ -14,6 +14,8 @@ RUN \
 
 ADD . /usr/bin/inkling-rsync
 
+CMD /usr/bin/inkling-rsync/bootstrap.sh
+
 
 
 

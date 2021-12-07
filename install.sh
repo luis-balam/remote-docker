@@ -22,7 +22,7 @@ echo $installDir
 
 echo "Cloning repo."
 #git clone git://github.com/inkling/content-scripts.git $installDir
-git git@github.com:luis-balam/remote-toolkit.git $installDir
+git clone git@github.com:luis-balam/remote-toolkit.git $installDir
 echo "== Finish cloning repo."
 
 

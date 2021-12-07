@@ -11,7 +11,6 @@ services:
       - "./svn:/usr/bin/inkling-rsync/svn"
     environment:
       - PYTHONPATH=/usr/bin/inkling-rsync
-      - PATH=/usr/bin/inkling-rsync/bin:$PATH
     stdin_open: true # docker run -i
     tty: true        # docker run -t
 

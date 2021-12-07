@@ -60,35 +60,8 @@ fi
 # Prints the directory this script is located in and properly escapes spaces.
 #echo "INSTALLING APP"
 dir=`printf "%q\n" "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"`
-# Need two lines to setup export line because we do not want to expand
-# $PYTHONPATH but we do want to expand $dir. Yay bash crazy!
-#installDir=${dir:-remote-toolkit}'/inkling-rsync'
-exportLine='export PYTHONPATH=$PYTHONPATH'
-exportLine="$exportLine:$dir"
-if ! grep -q "$exportLine" ~/.profile ; then
-  echo ">>>> ENTRO al export"
-  echo "Editing ~/.profile to set PYTHONPATH on Terminal launch"
-  echo ""
-  echo "Run 'source ~/.profile' to ensure PYTHONPATH is setup in this terminal."
-  echo "PYTHONPATH change will persist after you reboot your machine."
-  echo $exportLine >> ~/.profile
-  echo ""
-fi
-
-# Setup PATH to include bash versions of scripts
-exportLine='export PATH=$PATH'
-exportLine="$exportLine:$dir/bin"
-if ! grep -q "$exportLine" ~/.profile; then
-  echo "Adding bin directory to path."
-  echo ""
-  echo "Run 'source ~/.profile' to ensure PATH is setup in this terminal."
-  echo "PATH change will persist after you reboot your machine."
-  echo $exportLine >> ~/.profile
-  echo ""
-fi
-
-source ~/.profile
 
 
+export PYTHONPATH=$PYTHONPATH:$dir
+export PATH=$PATH:$dir/bin
 
- 

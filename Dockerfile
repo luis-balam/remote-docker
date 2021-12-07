@@ -14,7 +14,6 @@ RUN \
 
 ADD . /usr/bin/inkling-rsync
 
-ENTRYPOINT ["bootstrap.sh"]
 
 
 

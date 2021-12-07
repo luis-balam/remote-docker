@@ -9,8 +9,8 @@ services:
     volumes:
       - "./sync:/usr/bin/inkling-rsync/sync"
       - "./svn:/usr/bin/inkling-rsync/svn"
-    #environment:
-    #  - PYTHONPATH=/usr/bin/inkling-rsync
+    environment:
+      - PYTHONPATH=/usr/bin/inkling-rsync
     stdin_open: true # docker run -i
     tty: true        # docker run -t
 

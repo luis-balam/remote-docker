@@ -14,8 +14,9 @@ RUN \
 
 ADD . /usr/bin/inkling-rsync
 
-ENV PATH /usr/bin/inkling-rsync/bin:$PATH
-
+ENV \
+  PATH /usr/bin/inkling-rsync/bin:$PATH \
+  PYTHONPATH /usr/bin/inkling-rsync
 
 
 

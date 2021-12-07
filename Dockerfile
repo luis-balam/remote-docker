@@ -14,9 +14,6 @@ RUN \
 
 ADD . /usr/bin/inkling-rsync
 
-WORKDIR /usr/bin/inkling-rsync
-
-ENTRYPOINT ["boostrap.sh"]
 
 
 

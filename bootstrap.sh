@@ -87,4 +87,8 @@ if ! grep -q "$exportLine" ~/.profile; then
   echo ""
 fi
 
-source ~/.profile 
+source ~/.profile
+
+
+
+ 

@@ -20,7 +20,7 @@ echo "== INSTALL DIR"
 echo $installDir
 
 
-echo "Cloning repo."
+echo "== Cloning repo..."
 #git clone git://github.com/inkling/content-scripts.git $installDir
 git clone git@github.com:luis-balam/remote-toolkit.git $installDir
 echo "== Finish cloning repo."
@@ -28,15 +28,18 @@ echo "== Finish cloning repo."
 
 if [[ $? == 0 ]]; then
   #docker exec -it inkling-rsync-toolkit-1 bash
-  echo "Docker compose"
+  
+  echo "== Docker compose"
+  
   docker compose -f "$installDir/toolkit-compose.yml" up -d
     if [[ $? == 0 ]]; then
+      echo "== Docker EXEC"
       docker exec -it inkling-rsync-toolkit-1 bash
     else
-      echo "Error building and executing container."
+      echo "* Error building and executing container."
     fi
 else
-  echo "Error cloning git repo locally, unable to continue."
+  echo "* Error cloning git repo locally, unable to continue."
 fi
 
 

@@ -13,7 +13,8 @@ RUN \
   rm -rf /var/cache/apk/*
 
 ADD . /usr/bin/inkling-rsync
-CMD export PATH=$PATH:/usr/bin/inkling-rsync/bin
+
+ENV PATH /usr/bin/inkling-rsync/bin:$PATH
 
 
 

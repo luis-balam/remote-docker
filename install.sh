@@ -28,6 +28,9 @@ echo "== Finish cloning repo."
 
 if [[ $? == 0 ]]; then
   echo "== Docker compose..."
+  echo "== PLease run:"
+  echo "[ docker exec -it inkling-rsync-toolkit-1 bash ]"
+  echo "== To execute the container and start your machine tool:"
   docker compose -f "$installDir/toolkit-compose.yml" up -d
 else
   echo "* Error cloning git repo locally, unable to continue."

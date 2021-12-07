@@ -21,31 +21,23 @@ echo $installDir
 
 
 echo "Cloning repo."
-git clone git://github.com/inkling/content-scripts.git $installDir
+#git clone git://github.com/inkling/content-scripts.git $installDir
+git git@github.com:luis-balam/remote-toolkit.git $installDir
 echo "== Finish cloning repo."
 
-cp -R "/svn" "$installDir/svnBAK"
-cp -R "/sync" "$installDir/syncBAK"
-#echo "== Creating resources folder."
-#mkdir "$installDir/resources"
 
-
-#DOCKER_IMAGE="torus/remote-toolkit:local"
-#echo "== Docker image."
-#echo $DOCKER_IMAGE
-
-#echo "== Working directory"
-#cd $installDir
-
-#echo "== Runnining compose."
-#docker compose run --rm toolkit
-#docker build -t $DOCKER_IMAGE .
-#docker run -it --rm -v "$installDir/resources:/usr/bin/remote-toolkit/resources" $DOCKER_IMAGE bash
-#docker compose -f toolkit-compose.yml up
-docker compose up -d
-docker exec -it remote-toolkit-dev-toolkit-1 bash
-#torus/remote-toolkit:local
-#docker exec -it torus/remote-toolkit:local bash
+if [[ $? == 0 ]]; then
+  #docker exec -it inkling-rsync-toolkit-1 bash
+  echo "Docker compose"
+  docker compose -f "$installDir/toolkit-compose.yml" up -d
+    if [[ $? == 0 ]]; then
+      docker exec -it inkling-rsync-toolkit-1 bash
+    else
+      echo "Error building and executing container."
+    fi
+else
+  echo "Error cloning git repo locally, unable to continue."
+fi
 
 
 

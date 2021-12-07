@@ -11,4 +11,4 @@ services:
       - "./svn:/usr/bin/inkling-rsync/svn"
     stdin_open: true # docker run -i
     tty: true        # docker run -t
-    
+    command: bash "/usr/bin/inkling-rsync/bootstrap.sh"

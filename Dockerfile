@@ -12,6 +12,13 @@ RUN \
   pip install --no-cache-dir beautifulsoup4 && \
   rm -rf /var/cache/apk/*
 
+ADD . /usr/bin/inkling-rsync
+
+WORKDIR /usr/bin/inkling-rsync
+
+ENTRYPOINT ["boostrap.sh"]
+
+
 
 
 

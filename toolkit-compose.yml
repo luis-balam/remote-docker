@@ -3,12 +3,12 @@ version: '3.8'
 
 services:
   toolkit:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    build: .
+    image: torus/remote-toolkit:local
+    working_dir: "/usr/bin/inkling-rsync"
     volumes:
-      - "./resources:/usr/bin/remote-toolkit/resources"
-    working_dir: "/usr/bin/remote-toolkit"
-    environment:
-      - PATH=/usr/bin/remote-toolkit/bin
-    entrypoint: /bin/bash
+      - "./sync:/usr/bin/inkling-rsync/sync"
+      - "./svn:/usr/bin/inkling-rsync/svn"
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    
